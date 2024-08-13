@@ -13,26 +13,26 @@ function calculate(){
         
     var result = '';
     if(bmi<18.5){
-      result = 'Underweight';
+      result = 'You are Underweight';
        }else if(18.5<=bmi&&bmi<=24.9){
-      result = 'Healthy';
+      result = 'You are Healthy';
        }else if(25<=bmi&&bmi<=29.9){
-      result = 'Overweight';
+      result = 'You are Overweight';
        }else if(30<=bmi&&bmi<=34.9){
-      result = 'Obese';
+      result = 'You are Obese';
        }else if(35<=bmi){
-      result = 'Extremely obese';
+      result = 'You are Extremely obese';
        }
 
 
 
   resultArea.style.display = "block";
-  document.querySelector(".comment").innerHTML = `You are <span id="comment">${result}</span>`;
-  document.querySelector("#result").innerHTML = bmi;
+  document.querySelector(".comment").innerHTML = result
+  document.querySelector("#result").innerHTML = bmi.toFixed(3);
 
   const utterance = new SpeechSynthesisUtterance(result);
   window.speechSynthesis.speak(utterance);
-  
+
   
   }
   
